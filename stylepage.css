@@ -4,11 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(255, 246, 251);
 }
 
 p, li {
-    font-size: 16px;
+    font-size: 25px;
 }
 
 
@@ -26,16 +25,17 @@ p, li {
 
 .nav-link {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin-left: 20px;
 }
 
 .nav-link:hover {
-    color: rgb(3, 131, 151);
+    color: rgb(117, 204, 218);
 }
 
 .nav-link.active {
-    color: rgb(3, 131, 151);
+    color: rgb(117, 204, 218);
+    text-decoration: underline;
 }
 
 
@@ -108,8 +108,8 @@ p, li {
 
 .bias-pic {
     flex-shrink: 0;     
-    width: 500px;
-    height: 350px;   
+    width: 400px;
+    height: 300px;   
     border-radius: 20%;   
 }
 
