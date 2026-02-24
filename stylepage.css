@@ -10,6 +10,10 @@ p, li {
     font-size: 25px;
 }
 
+div {
+    margin-bottom: 30px;
+}
+
 
 /* navbar css */
 .navbar {
@@ -48,17 +52,15 @@ p, li {
 }
 
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 50px;
-    margin: 25px 25vw;
+    margin: 25px auto;  
+    width: 90%;  
+    max-width: 1200px; 
 }
 
 .profile {
     display: flex;
-    align-items: center; 
-    gap: 50px;
+    align-items: flex-start; 
+    gap: 20px;
 }
 
 .icon {
@@ -88,11 +90,9 @@ p, li {
 }
 
 .implicit-bias-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    margin: 25px 27.5vw;
+    margin: 25px auto; 
+    width: 90%;    
+    max-width: 1200px;   
 }
 
 .implicit-bias-information {
@@ -108,8 +108,8 @@ p, li {
 
 .bias-pic {
     flex-shrink: 0;     
-    width: 400px;
-    height: 300px;   
+    width: 250px;
+    height: 200px;   
     border-radius: 20%;   
 }
 
