@@ -1,6 +1,6 @@
 /* global css */
 * {
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family:'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,8 +18,7 @@ div {
 /* navbar css */
 .navbar {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
     background-color: rgb(116, 96, 132);
     padding: 20px;
     font-size: 24px;
@@ -95,7 +94,7 @@ div {
     max-width: 1200px;   
 }
 
-.implicit-bias-information {
+.information {
     display: flex;
     gap: 30px;
 }
@@ -106,11 +105,22 @@ div {
     gap: 10px;
 }
 
+.subtext-img {
+    font-size: 12px;
+}
+
 .bias-pic {
-    flex-shrink: 0;     
-    width: 250px;
-    height: 200px;   
+    flex-shrink: 0; 
+    object-fit: cover;    
+    width: 275px;
+    height: 375px;   
     border-radius: 20%;   
+}
+
+.images-resource {
+    flex-shrink: 0;     
+    width: 400px;
+    height: 300px;  
 }
 
 .info-links {
@@ -134,11 +144,12 @@ div {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    font-size: 16px;
 }
 
 .home-img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 20%;
 }
