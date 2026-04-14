@@ -7,7 +7,7 @@
 }
 
 p, li {
-    font-size: 25px;
+    font-size: 18px;
 }
 
 div {
@@ -30,15 +30,22 @@ div {
     text-decoration: none;
     color: rgb(255, 255, 255);
     margin-left: 20px;
+    padding-right: 20px;
+    border-right: 2px solid white;
+
 }
 
 .nav-link:hover {
-    color: rgb(117, 204, 218);
+    color: rgb(157, 178, 181);
 }
 
 .nav-link.active {
     color: rgb(117, 204, 218);
     text-decoration: underline;
+}
+
+.nav-link:last-child {
+    border-right: none;
 }
 
 
@@ -155,3 +162,41 @@ div {
 }
 
 /* ML page css */
+.header {
+    text-align: left;
+    color: rgb(124, 143, 128);
+}
+.statementTitle {
+    color: rgb(63, 89, 119);
+    text-decoration: underline;
+    text-align: center;
+}
+
+.main-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+}
+
+.sidebar {
+    width: 200px;
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgb(124, 143, 128);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    color: rgb(117, 204, 218);
+}
