@@ -16,106 +16,66 @@
         <a class="nav-link active" href="./ML.html">Machine Learning</a>
     </div>
 
+    <!-- page header -->
+    <div class="headerBlock">
+        <h1 class="header">Machine Learning Model</h1>
+    </div>
+
     <div class="main-layout">
         <!-- main content -->
-        <div class="profile-container">
-            <!-- page header -->
-            <h1 class="header">Machine Learning for Project 3...</h1>
-
-            <h1 id="training" class="statementTitle">Training Data</h1>
-            <p>
-                Our full training dataset can be found <a href="https://drive.google.com/drive/folders/19ChGDGMfM_JQ7MobratKCFypWAgeKR2h?usp=sharing" target="_blank">here</a>.
-                Each folder represents a different classification, and each zip file contains roughly a hundred images of a single object. Zip files are named according to 
-                shape, color, lighting, or background. The “none of the above” zip file contains images of a variety of different non-listed and/or non-cleaning items.
-            </p>
-
-            <h1 id="github" class="statementTitle">GitHub Repo</h1>
-            <p>
-                Our model is open-source, and we welcome improvements and expansions. Our full Github repository can be found <a href= "https://github.com/saheuss-cmyk/Code-PowerPrj2" target="_blank">here</a>.
-            </p>
-
-            <h1 id="overview" class="statementTitle">Project Overview</h1>
-            <p>
-                Our model is designed to identify live images of kitchen cleaning supplies. We focused less on capturing a wide variety of kitchen supplies and more on ensuring that each of our classifications was trained on diverse and inclusive data. We chose three unique yet variable classifications: dish soap, spray bottle, and sponge.<br/>
-                In order to limit potential training bias, we followed guidelines laid out by AI activist Joy Buolamwini. This led us to train our model on a variety of dish soaps, sponges, and spray bottles in different colors, shapes, lighting conditions, and background colors. We acknowledge that our model may still be less accurate for users of differing localities or cultures, as we were limited to training on objects that were easily accessible to UW-Madison students.<br/>
-                Our model performed well in tests, correctly identifying a variety of dish soaps, spray bottles, and sponges. Diversifying our training data significantly improved initial problems with identification accuracy. Regardless, the model continues to display some “flickering” between correct and incorrect identifications, and performs best when using solid-color, high-contrast backgrounds paired with a high-quality video feed. Future directions include adding more training data with lower quality images and low-contrast backgrounds, more data for our “none of the above” classification, and soliciting cross-cultural images of cleaning supplies to reduce bias.
-            </p>
-                
-            <h1 id="inclusive" class="statementTitle">Designing Inclusively</h1>
-            <h3 class="subTitle">Initial Data Considerations</h3>
-            <p>
-                To design our model with inclusivity at the forefront, we primarily referenced Joy Buolamwini’s book Unmasking AI. The text focuses on her experience uncovering the implicit biases encoded into facial recognition software. Her work showed that these algorithms were significantly more accurate at identifying light-skinned males than darker-skinned females – for example, IBM software was 34.4 percent more accurate for lighter males than darker females (Buolamwini 141).<br/>
-                While our model is less directly linked to topics of human diversity and discrimination, we still used Buolamwini’s work to improve its accuracy and inclusivity. When Buolamwini examined existing datasets of faces, she discovered they often contained disproportionately light faces – for example, the 86% of the Adience dataset, a publicly available facial dataset developed for gender research, consisted of lighter faces (Buolamwini 110). This is an example of power shadows, “cast when the biases or systemic exclusion of a society are reflected in the data” (Buolamwini 95).<br/>
-                This concept can be generalized to suggest that the more or less diverse a data set, the more or less a model will accurately identify diverse objects – in our case, cleaning products. To minimize this issue, we took pictures of several different objects within each of our main classes (spray bottle, sponge, and dish soap). Spray bottle, for example, is trained on bottles of various shapes and colors. These include a thin, transparent bottle with blue fluid; a round, white bottle; a bottle with a bright yellow label; and a bottle with a yellow and green label. While this does not capture the full variety of spray bottles available for purchase, we attempted to maximize variety within our constraints (objects that we owned or that were easily accessible to us).<br/>
-                Early in our design process, we also considered creating a vacuum cleaner class. However, since we have limited access to a variety of vacuum cleaners, the concept of power shadows again suggests that our model accuracy would have likely been lower for this class due to limited training data. We decided to eliminate vacuums from our current implementation and leave this as a potential future direction due to our inability to provide proper representation at this time.
-            </p>
-            <h3 class="subTitle">Diversifying Data</h3>
-            <p>While choosing training data in a variety of shapes, sizes, and colors was intentional, we did not initially consider the importance of lighting conditions and background colors. This was a misstep on our part, as the first iteration of our model struggled to accurately identify objects that were not brightly lit or that were not paired with light-colored backgrounds. As Buolamwini states, “well-lit environments… [do] not equip systems for unconstrained environments, also known as the real world, where most people do not walk around with studio-quality lighting” (Buolamwini 189). This led us to diversify our data to include images in bright fluorescent lighting, warm lighting, and dim lighting. We also added additional images with dark-colored backgrounds. These changes significantly improved model accuracy.</p>
-            <h3 class="subTitle">Data Limitations</h3>
-            <p>
-                Despite our efforts to include diversity in each of our data sets, we acknowledge that imbalances still exist due to the fact that we had more access to certain types of products. Spray bottle, for example, has the most data diversity in terms of product color and shape, with four different types of spray bottles photographed. Sponge has the most diversity in terms of lighting and background contrast, but the least variety in product type, with only two sponges photographed. Dish soap is our most balanced data set in terms of lighting and background, as well as color and shape, but it had the lowest amount of data overall. While our model performed moderately well in tests, dish soap was misidentified more frequently than spray bottles and sponges, underscoring the importance of Buolamwini’s call for balanced training data.<br/>
-                Buolamwini’s work also led us to consider cultural and location-based differences in cleaning products. As UW-Madison students, we primarily have access to supplies sold in local stores. While many of these supplies are produced by name brands sold across the US, products can differ widely by country due to differing regulations and markets. For example, while cleaning products sold in Brazil follow similar international regulations as Europe and the United States, they have more lax research study requirements for new products, less guidance for applicants, and reduced bureaucracy (Silva, et al.). This contributes to differing product availability. Additionally, cleaning methods and preferences vary by culture – for example, Americans largely prefer chemical cleaning aids, while almost half of Japanese people do not use chemicals (Kaercher). Our US-centric training data suggests that our current model will have higher accuracy for US-based users. A potential future direction for this project is to solicit training data from individuals in other countries, specifically on products that are representative of local cleaning markets and preferences. 
-            </p>
-
-            <h1 id="process" class="statementTitle">Training Process</h1>     
-            <p>
-                To create our model, we used Teachable Machine, Google’s streamlined web service for making AI algorithms. We initially added three classes – sponge, dish soap, and spray bottle – and uploaded our training data to each.<br/>
-                We found that our first version of the model worked fairly well when presented with an object that fit into one of our three classes, but it struggled when presented with objects that did not. This prompted us to add a “none of the above” class, which we trained on “random” non-cleaning products such as a microwave, a backpack, and selfies. This significantly reduced early misidentification issues, such as repeatedly determining that images of ourselves were, in fact, spray bottles – an entertaining but nonetheless significant problem. In line with Buolamwini’s work, one way we could improve the inclusivity of this classification would be to add more diverse “selfie” images, since our current data consists primarily of light skin tones due to our group’s demographics.<br/>
-                Additional tests showed that the model continued to have reduced accuracy in low-light conditions, as well as in conditions with low background contrast. This prompted us to diversify our data to include images taken in these conditions. Sponge data, in particular, was significantly expanded to include differing lighting conditions. This significantly reduced “flickering”, in which the model rapidly switches between correct and incorrect identifications.
-            </p>
-                
-            <h1 id="results" class="statementTitle">Results & Future Directions</h1>     
-            <h3 class="subTitle">Narrowing the Digital Divide</h3>
-            <p>
-                The current version of our model exhibited a moderate-to-high level of accuracy in our tests. However, it continues to display some flickering between correct and incorrect identifications. Our tests showed that this behavior is significantly worse when using low-quality video feeds, such as computer webcams, and when there is minimal color contrast between an object and the background. Since certain users, such as those who are low-income or in rural areas, may not have access to high-quality cameras due to the digital divide (Syracuse), this is a significant concern in terms of ensuring equity in our model. Future development would include diversifying datasets to represent a wider variety of camera qualities.
-            </p>
-            <h3 class="subTitle">Balancing Dataset</h3>
-            <p>
-                We also note that out of our three categories (dish soap, sponge, and spray bottle), dish soap performs the worst in terms of accuracy. In line with Buolamwini’s work, this can likely be attributed to the fact that dish soap has the smallest data set (around 300 images, as opposed to around 500 for both sponge and spray bottle). A priority for future development would be to diversify this set with at least one additional product color or shape.
-            </p>
-            <h3 class="subTitle">User Testing</h3>
-            <p>
-                Finally, we acknowledge that our tests, in and of themselves, were limited by the objects that we had access to. We primarily tested our model on the very same objects that it was trained on (for example, a yellow and green sponge, and a blue spray bottle). Since we made significant efforts to diversify training data within our limitations, it is our hope that our model will still perform with a moderate-to-high level of accuracy for products that it was not tested on. User feedback will guide the addition of any future training data.
-            </p>
-            <h3 class="subTitle">Cultural Diversity</h3>
-            <p>
-                As previously noted, our model also largely excludes products that are not easily accessible in the Madison, Wisconsin area. A future direction, while outside the scope of this project, could be to solicit data from individuals in other countries, as well as those who culturally use different styles of cleaning products. This would significantly improve cross-cultural inclusivity and minimize data bias.
-            </p>
-
-            <div class="line">
-                <br/><p class="reference"><b>References</b></p>
-                <p>Buolamwini, Joy. <i>Unmasking AI: My Mission to Protect What Is Human in a World of Machines.</i> Random House, Imprint and Division of Penguin Random House LLC, 2024.</p>
-                <br/><p>Everyone Likes It Clean - An International Cleaning Survey, www.kaercher.com/us/inside-karcher/newsroom/kaercher-stories/international-study-everyone-likes-it-clean.html. Accessed 14 Apr. 2026.</p>
-                <br/><p>Silva, Elaine & Moura, Italo & Moita Neto, Jose. (2023). CLEANING PRODUCTS REGULATION IN THREE WORLD MARKETS: THE BRAZILIAN CASE EFFECTIVENESS. Veredas do Direito Direito Ambiental e Desenvolvimento Sustentável. 10.18623/rvd.v20.2543-ing.</p>
-                <br/><p>“What Is the Digital Divide? Meaning, Causes & Impact.” iSchool, 2 Apr. 2026, ischool.syracuse.edu/what-is-the-digital-divide/.</p>
-            </div>
-
-            <div class="line">
-                <h1 id="video" class="statementTitle">Video Demo</h1>     
+        <div class="model-container">
+            <h3><a href="#tryit" class="button">Click Here to Try Out The Model!</a></h3>
+            <div class="section">
+                <h1 id="overview" class="statementTitle">Overview</h1>
                 <p>
-                    Below is a video of one of us walking through our model. Notice similarities like size or background exposure that the machine might get confused on.
-                </p><br/>
-                <video width="660" controls>
-                    <source src="Emojis.mp4">
-                </video>
+                    Our model is designed to identify live images of kitchen cleaning supplies. We focused less on capturing a wide variety of kitchen supplies and more on ensuring that each of our classifications was trained on diverse and inclusive data. We chose three unique yet variable classifications: dish soap, spray bottle, and sponge.<br/>
+                </p>
+                <p>
+                    In order to limit potential training bias, we followed guidelines laid out by AI activist Joy Buolamwini. This led us to train our model on a variety of dish soaps, sponges, and spray bottles in different colors, shapes, lighting conditions, and background colors. We acknowledge that our model may still be less accurate for users of differing localities or cultures, as we were limited to training on objects that were easily accessible to UW-Madison students.<br/>
+                </p>
+                <p>    
+                    Our model performed well in tests, correctly identifying a variety of dish soaps, spray bottles, and sponges. Diversifying our training data significantly improved initial problems with identification accuracy. Regardless, the model continues to display some “flickering” between correct and incorrect identifications, and performs best when using solid-color, high-contrast backgrounds paired with a high-quality video feed. Future directions include adding more training data with lower quality images and low-contrast backgrounds, more data for our “none of the above” classification, and soliciting cross-cultural images of cleaning supplies to reduce bias.
+                </p>
             </div>
-            
+
+            <h3><a href="./statement.html" class="button">Learn More →</a></h3><br/>
+
+            <h1 id="video" class="statementTitle">Video Demo</h1>     
+            <p>
+                Below is a video of one of us walking through our model. Notice similarities like size or background exposure that the machine might get confused on.
+            </p><br/>
+            <video controls>
+                <source src="Emojis.mp4">
+            </video>
+                
             <div class="line">
-                <h1 id="try" class="statementTitle">Try It Yourself</h1>  
+                <h1 id="tryit" class="statementTitle">Try It Yourself</h1>  
                 <p>Below is a live demo of our model:</p>   
-                <iframe src="sketch.html" width="660" height="540"></iframe><br/>
-                <a href="https://teachablemachine.withgoogle.com/models/N6-1Y1S_4/" target="_blank">Click here to view Teachable Machine</a>
+                <iframe src="sketch.html"></iframe><br/>
+                <a href="https://teachablemachine.withgoogle.com/models/N6-1Y1S_4/" target="_blank">Click here to view this on Teachable Machine</a>
             </div>
+
+            <div class="section">
+                <h1 id="training" class="statementTitle">Training Data</h1>
+                <p>
+                    Our full training dataset can be found <a href="https://drive.google.com/drive/folders/19ChGDGMfM_JQ7MobratKCFypWAgeKR2h?usp=sharing" target="_blank">here</a>.
+                    Each folder represents a different classification, and each zip file contains roughly a hundred images of a single object. Zip files are named according to 
+                    shape, color, lighting, or background. The “none of the above” zip file contains images of a variety of different non-listed and/or non-cleaning items.
+                </p>
+                <br/>
+                <p>
+                    Our model is open-source, and we welcome improvements and expansions. Our full Github repository can be found <a href= "https://github.com/saheuss-cmyk/Code-PowerPrj2" target="_blank">here</a>.
+                </p>
+            </div>
+
+            <h3><a href="#" class="button">Back to Top of Page ↑</a></h3>
         </div>
 
         <div class="sidebar">
-            <p>Project 3 Statement Sections:</p>
-            <a href="#training">Training Data</a>
-            <a href="#github">GitHub Repo</a>
             <a href="#overview">Overview</a>
-            <a href="#inclusive">Designing Inclusively</a>
-            <a href="#process">Training Process</a>
-            <a href="#results">Results & Future Directions</a>
+            <a href="#video">Video Demo</a>
+            <a href="#tryit">TRY IT YOURSELF</a>
+            <a href="#training">Training Data</a>
         </div>
     </div>
 </body>

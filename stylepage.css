@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+p {
+    text-indent: 40px;
+}
+
 p, li {
     font-size: 18px;
 }
@@ -14,8 +18,22 @@ div {
     margin-bottom: 30px;
 }
 
+iframe {
+    max-width: 660px;
+    height: 540px;
+    width: 100%;
+    display:block;
+    margin: 10px auto;
+}
 
-/* navbar css */
+video {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* navbar and header css */
 .navbar {
     display: flex;
     justify-content: left;
@@ -23,7 +41,7 @@ div {
     padding: 20px;
     font-size: 24px;
     font-weight: 1000;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
 }
 
 .nav-link {
@@ -32,7 +50,6 @@ div {
     margin-left: 20px;
     padding-right: 20px;
     border-right: 2px solid white;
-
 }
 
 .nav-link:hover {
@@ -48,6 +65,20 @@ div {
     border-right: none;
 }
 
+.headerBlock{
+    height: 300px;
+    width: 100hv;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(216, 223, 217);
+    margin-bottom: 10px;
+}
+
+.header {
+    text-align: left;
+    color: rgb(124, 143, 128);
+}
 
 /* about and tech heroes pages css */
 .about-container {
@@ -161,16 +192,33 @@ div {
     border-radius: 20%;
 }
 
-/* ML page css */
-.header {
-    text-align: left;
-    color: rgb(124, 143, 128);
+/* ML + statement pages css */
+.button {
+    display: inline-block;
+    background-color: rgb(116, 96, 132);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 15px;
 }
+
+.button:hover {
+    background-color: rgb(90, 61, 113);
+}
+
 .statementTitle {
     color: rgb(63, 89, 119);
     text-decoration: underline;
     text-align: center;
-    margin-top: 40px;
+}
+
+.section {
+    border: 2px solid #ccc;   /* full border */
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;      /* optional: rounded corners */
+
 }
 
 .subTitle {
@@ -187,7 +235,21 @@ div {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    margin-left: 100px;
+    margin-right: 50px;
     gap: 40px;
+}
+
+.model-container {
+    margin: 0 auto;  
+    width: 50%;  
+    max-width: 1200px; 
+}
+
+.statement-container {
+    margin: 0 auto;  
+    width: 60%;  
+    max-width: 1200px; 
 }
 
 .sidebar {
@@ -200,6 +262,7 @@ div {
     background-color: rgb(124, 143, 128);
     padding: 15px;
     border-radius: 10px;
+    margin-top: 25px;
 }
 
 .sidebar a {
@@ -213,7 +276,7 @@ div {
 }
 
 .line {
-    border-top: 2px solid #ccc;
+    border-top: 4px solid #ccc;
     padding-top: 20px;
     margin-top: 30px;
 }
