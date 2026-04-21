@@ -24,6 +24,7 @@
     <div class="main-layout">
         <!-- main content -->
         <div class="statement-container">
+            <!--Button will take user back to model page-->
             <h3><a href="./ML.html" class="button">← Back to Model Page</a></h3>
             <div class="section">
                 <h1 id="inclusive" class="statementTitle">Designing Inclusively</h1>
@@ -62,6 +63,18 @@
                 <p>
                     Additional tests showed that the model continued to have reduced accuracy in low-light conditions, as well as in conditions with low background contrast. This prompted us to diversify our data to include images taken in these conditions. Sponge data, in particular, was significantly expanded to include differing lighting conditions. This significantly reduced “flickering”, in which the model rapidly switches between correct and incorrect identifications.
                 </p>
+
+                <!--This is to have an image with a blurb next to it describing the image-->
+                <div class="line">
+                    <div class="imageInRow">
+                        <img src="mislabelledML.png" alt="Bubblr mislabelled as a spray bottle">
+                        <div class="imageText">
+                            <p>
+                                As you can see to in the screenshot to the left, the model was misidentifying my Bubblr as a spray bottle. This is probably because it is a tall cylinder and the way it was being held was similar to how we held the spray bottles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
                     
             <div class="section">
@@ -84,6 +97,7 @@
                 </p>
             </div>
 
+            <!--References-->
             <div class="line">
                 <br/><p id="references" class="reference"><b>References</b></p>
                 <p>Buolamwini, Joy. <i>Unmasking AI: My Mission to Protect What Is Human in a World of Machines.</i> Random House, Imprint and Division of Penguin Random House LLC, 2024.</p>
@@ -95,11 +109,13 @@
             <h3><a href="#" class="button">Back to Top of Page ↑</a></h3>
         </div>
 
+        <!--This is the side nav bar to help navigate through the different sections on this page-->
         <div class="sidebar">
             <a href="#inclusive">Designing Inclusively</a>
             <a href="#training">Training Process</a>
             <a href="#results">Results & Future Directions</a>
             <a href="#references">References</a>
+            <a href="./ML.html">← Back to Model Page</a>
         </div>
     </div>
 </body>

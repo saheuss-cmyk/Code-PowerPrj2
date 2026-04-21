@@ -33,6 +33,10 @@ video {
     height: auto;
 }
 
+emphasis {/*used to emphasize something (id has higher precedence than class)*/
+    font-family: "Segoe Script", cursive;
+}
+
 /* navbar and header css */
 .navbar {
     display: flex;
@@ -77,7 +81,8 @@ video {
 
 .header {
     text-align: left;
-    color: rgb(124, 143, 128);
+    font-family: "Segoe Script", cursive;
+    color: rgb(49, 86, 57);
 }
 
 /* about and tech heroes pages css */
@@ -214,11 +219,10 @@ video {
 }
 
 .section {
-    border: 2px solid #ccc;   /* full border */
+    border: 2px solid #ccc;
     padding: 20px;
     margin-top: 30px;
-    border-radius: 10px;      /* optional: rounded corners */
-
+    border-radius: 10px;
 }
 
 .subTitle {
@@ -228,7 +232,7 @@ video {
 
 .reference {
     text-decoration: underline;
-    text-decoration: bold;
+    font-weight: bold;
 }
 
 .main-layout {
@@ -250,6 +254,17 @@ video {
     margin: 0 auto;  
     width: 60%;  
     max-width: 1200px; 
+}
+
+.imageInRow {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.imageText {
+    flex: 1;
 }
 
 .sidebar {
