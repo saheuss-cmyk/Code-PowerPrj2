@@ -19,8 +19,8 @@ div {
 }
 
 iframe {
-    max-width: 660px;
-    height: 540px;
+    max-width: 640px;
+    height: 740px;
     width: 100%;
     display:block;
     margin: 10px auto;
@@ -294,4 +294,14 @@ emphasis {/*used to emphasize something (id has higher precedence than class)*/
     border-top: 4px solid #ccc;
     padding-top: 20px;
     margin-top: 30px;
+}
+
+.model div {
+    margin: 0px;
+}
+
+.predictions div {
+    font-size: 24px;
+    margin: 6px 20px;
+    padding: 0px;
 }
