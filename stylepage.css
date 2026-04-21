@@ -219,6 +219,9 @@ emphasis {/*used to emphasize something (id has higher precedence than class)*/
 }
 
 .section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     border: 2px solid #ccc;
     padding: 20px;
     margin-top: 30px;
@@ -296,6 +299,7 @@ emphasis {/*used to emphasize something (id has higher precedence than class)*/
     margin-top: 30px;
 }
 
+/* styling for embedding the model demo */
 .model div {
     margin: 0px;
 }
