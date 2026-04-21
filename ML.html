@@ -27,6 +27,10 @@
             <h3><a href="#tryit" class="button">Click Here to Try Out The Model!</a></h3>
             <!--each "section" is surrounded by a border for visuals-->
             <div class="section">
+                <h1 id="overview" class="statementTitle">Overview</h1>
+                <p>Our model is designed to identify live images of kitchen cleaning supplies. We focused less on capturing a wide variety of cleaning supplies and more on ensuring that each of our classifications was trained on diverse and inclusive data. We chose three unique yet variable classifications: dish soap, spray bottle, and sponge.</p>
+            </div>
+            <div class="section">
                 <h1 id="reflection" class="statementTitle">Reflection & Future Directions</h1>
                 <p>
                     When we began development, we knew we wanted to model with diversity in mind, but struggled with connecting cleaning products to intersectionality. Throughout our data collection and analysis, we began to realize the extent to which even cleaning products are influenced by culture, access, and location – all of which can affect which products are available, individual cleaning preferences, and even access to high-quality video feeds. While Buolamwini’s work initially led us to strive for diversity in terms of product color and background, the project ultimately opened our eyes to how even seemingly insignificant design choices can exert significant influence on AI model performance and encoded power.
@@ -85,6 +89,7 @@
 
         <!--This is the side nav bar to help navigate through the different sections on this page-->
         <div class="sidebar">
+            <a href="#overview">Overview</a>
             <a href="#reflection">Reflection</a>
             <a href="#video">Video Demo</a>
             <a id="emphasis" href="#tryit">Try It Yourself</a> <!--I used id because this has higher precedence than a class' CSS-->
