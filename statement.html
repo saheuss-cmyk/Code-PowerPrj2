@@ -30,45 +30,80 @@
             <div class="section">
                 <h1 id="inclusive" class="statementTitle">Designing Inclusively</h1>
                 <img src="img/Unmasking_AI.png" alt="Unmasking AI book cover next to a quote by Joy Buolamwini about the future of AI">
-                <h3 class="subTitle">Initial Data Considerations</h3>
+                <h3 class="subTitle">Phase One: Initial Data Considerations</h3>
                 <p>
-                    To design our model with inclusivity at the forefront, we primarily referenced Joy Buolamwini's book Unmasking AI. The text focuses on her experience uncovering the implicit biases encoded into facial recognition software. Her work showed that these algorithms were significantly more accurate at identifying light-skinned males than darker-skinned females - for example, IBM software was 34.4 percent more accurate for lighter males than darker females (Buolamwini 141).<br/>
+                    To design our model with inclusivity at the forefront, we primarily referenced Joy Buolamwini's book Unmasking AI. The text focuses on her experience uncovering the implicit biases encoded into facial recognition software. Her work showed that these algorithms were significantly more accurate at identifying light-skinned males than darker-skinned females - for example, IBM software was 34.4 percent more accurate for lighter males than darker females (Buolamwini 141).
                 </p>
                 <p>
-                    While our model is less directly linked to topics of human diversity and discrimination, we still used Buolamwini's work to improve its accuracy and inclusivity. When Buolamwini examined existing datasets of faces, she discovered they often contained disproportionately light faces - for example, the 86% of the Adience dataset, a publicly available facial dataset developed for gender research, consisted of lighter faces (Buolamwini 110). This is an example of power shadows, “cast when the biases or systemic exclusion of a society are reflected in the data” (Buolamwini 95).<br/>
+                    While our model is less directly linked to topics of human diversity and discrimination, we still used Buolamwini's work to improve its accuracy and inclusivity. When Buolamwini examined existing datasets of faces, she discovered they often contained disproportionately light faces - for example, the 86% of the Adience dataset, a publicly available facial dataset developed for gender research, consisted of lighter faces (Buolamwini 110). This is an example of power shadows, “cast when the biases or systemic exclusion of a society are reflected in the data” (Buolamwini 95).
                 </p>
                 <p>
-                    This concept can be generalized to suggest that the more or less diverse a data set, the more or less a model will accurately identify diverse objects - in our case, cleaning products. To minimize this issue, we took pictures of several different objects within each of our main classes (spray bottle, sponge, and dish soap). Spray bottle, for example, is trained on bottles of various shapes and colors. These include a thin, transparent bottle with blue fluid; a round, white bottle; a bottle with a bright yellow label; and a bottle with a yellow and green label. While this does not capture the full variety of spray bottles available for purchase, we attempted to maximize variety within our constraints (objects that we owned or that were easily accessible to us).<br/>
+                    This concept can be generalized to suggest that the more or less diverse a data set, the more or less a model will accurately identify diverse objects - in our case, cleaning products. To minimize this issue, we took pictures of several different objects within each of our main classes (spray bottle, sponge, and dish soap). Spray bottle, for example, is trained on bottles of various shapes and colors. These include a thin, transparent bottle with blue fluid; a round, white bottle; a bottle with a bright yellow label; a bottle with a yellow and green label; and a bottle with a purple label. While this does not capture the full variety of spray bottles available for purchase, we attempted to maximize variety within our constraints (objects that we owned or that were easily accessible to us).
                 </p>
                 <img src="img/spray_side_by_side.png" alt="3 side by side images of a blue, purple, and clear spray bottle">
                 <p>
                     Early in our design process, we also considered creating a vacuum cleaner class. However, since we have limited access to a variety of vacuum cleaners, the concept of power shadows again suggests that our model accuracy would have likely been lower for this class due to limited training data. We decided to eliminate vacuums from our current implementation and leave this as a potential future direction due to our inability to provide proper representation at this time.
                 </p>
-                <h3 class="subTitle">Diversifying Data</h3>
-                <p>While choosing training data in a variety of shapes, sizes, and colors was intentional, we did not initially consider the importance of lighting conditions and background colors. This was a misstep on our part, as the first iteration of our model struggled to accurately identify objects that were not brightly lit or that were not paired with light-colored backgrounds. As Buolamwini states, “well-lit environments… [do] not equip systems for unconstrained environments, also known as the real world, where most people do not walk around with studio-quality lighting” (Buolamwini 189). This led us to diversify our data to include images in bright fluorescent lighting, warm lighting, and dim lighting. We also added additional images with dark-colored backgrounds. These changes significantly improved model accuracy.</p>
+
+                <h3 class="subTitle">Phase Two: Diversifying Data</h3>
+                <p>
+                    We created our model by adding our initial dataset to Teachable Machine, Google's streamlined web service for making AI algorithms. We first created three classes - sponge, dish soap, and spray bottle - and uploaded our training data to each.
+                </p>
+                <p>
+                    While choosing training data in a variety of shapes, sizes, and colors was intentional, we did not initially consider the importance of lighting conditions and background colors. This was a misstep on our part, as the first iteration of our model struggled to accurately identify objects that were not brightly lit or that were not paired with light-colored backgrounds. As Buolamwini states, “well-lit environments… [do] not equip systems for unconstrained environments, also known as the real world, where most people do not walk around with studio-quality lighting” (Buolamwini 189). This led us to diversify our data to include images in bright fluorescent lighting, warm lighting, and dim lighting. We also added additional images with dark-colored backgrounds. Sponge data, in particular, was significantly expanded to include differing lighting conditions. These changes significantly improved model accuracy.
+                </p>
                 <img src="img/sponge_side_by_side.png" alt="3 side by side images of a yellow sponge, blue sponge, and blue sponge in dim lighting">
-                <h3 class="subTitle">Data Limitations</h3>
                 <p>
-                    Despite our efforts to include diversity in each of our data sets, we acknowledge that imbalances still exist due to the fact that we had more access to certain types of products. Spray bottle, for example, has the most data diversity in terms of product color and shape, with four different types of spray bottles photographed. Sponge has the most diversity in terms of lighting and background contrast, but the least variety in product type, with only two sponges photographed. Dish soap is our most balanced data set in terms of lighting and background, as well as color and shape, but it had the lowest amount of data overall. While our model performed moderately well in tests, dish soap was misidentified more frequently than spray bottles and sponges, underscoring the importance of Buolamwini's call for balanced training data.<br/>
-                </p>
-                <p>
-                    Buolamwini's work also led us to consider cultural and location-based differences in cleaning products. As UW-Madison students, we primarily have access to supplies sold in local stores. While many of these supplies are produced by name brands sold across the US, products can differ widely by country due to differing regulations and markets. For example, while cleaning products sold in Brazil follow similar international regulations as Europe and the United States, they have more lax research study requirements for new products, less guidance for applicants, and reduced bureaucracy (Silva, et al.). This contributes to differing product availability. Additionally, cleaning methods and preferences vary by culture - for example, Americans largely prefer chemical cleaning aids, while almost half of Japanese people do not use chemicals (Kaercher). Our US-centric training data suggests that our current model will have higher accuracy for US-based users. A potential future direction for this project is to solicit training data from individuals in other countries, specifically on products that are representative of local cleaning markets and preferences. 
-                </p>
-                <img src="img/country_side_by_side.png" alt="2 images comparing the usage rates of different types of cleaners by people in the USA and Japan">
-            </div>
-
-            <div class="section">
-                <h1 id="training" class="statementTitle">Training Process</h1>     
-                <p>
-                    To create our model, we used Teachable Machine, Google's streamlined web service for making AI algorithms. We initially added three classes - sponge, dish soap, and spray bottle - and uploaded our training data to each.<br/>
-                </p>
-                <p>
-                    We found that our first version of the model worked fairly well when presented with an object that fit into one of our three classes, but it struggled when presented with objects that did not. This prompted us to add a “none of the above” class, which we trained on “random” non-cleaning products such as a microwave, a backpack, and selfies. This significantly reduced early misidentification issues, such as repeatedly determining that images of ourselves were, in fact, spray bottles - an entertaining but nonetheless significant problem. In line with Buolamwini's work, one way we could improve the inclusivity of this classification would be to add more diverse “selfie” images, since our current data consists primarily of light skin tones due to our group's demographics.<br/>
-                </p>
-                <p>
-                    Additional tests showed that the model continued to have reduced accuracy in low-light conditions, as well as in conditions with low background contrast. This prompted us to diversify our data to include images taken in these conditions. Sponge data, in particular, was significantly expanded to include differing lighting conditions. This significantly reduced “flickering”, in which the model rapidly switches between correct and incorrect identifications.
+                    We also found that our first version of the model worked fairly well when presented with an object that fit into one of our three classes, but it struggled when presented with objects that did not. This prompted us to diversify our data by adding a “none of the above” class, which we trained on “random” non-cleaning products such as a microwave, a backpack, and selfies. This significantly reduced early misidentification issues.
                 </p>
 
+                <h3 class="subTitle">Phase 3: Results and Analysis</h3>
+                <p>
+                    Our model performed moderately well when tested with cleaning and non-cleaning products, identifying items correctly the majority of the time. Our biggest problem was “flickering”, with the model rapidly switching between correct and incorrect identifications. Known problems, possible solutions, and analysis of our limitations and its interactions with inclusivity are discussed below.
+                </p>
+                <h4 class="subTitle">Lighting and background problems</h4>
+                <p>
+                    While we developed our model with diversity and accuracy in mind, the scope of our project is limited, with less than 5,000 unique images and less than 25 unique cleaning products. As a result, our model displays some known identification errors. While we did attempt to diversify our data to address lighting and background differences, these ongoing problems suggest the model could be improved by further diversifying and reducing training bias.
+                </p>
+                <p>
+                    These include the following conditions and possible solutions:<br/>
+                </p>
+                <p>
+                    *   Error: Variations in lighting, especially dim lighting<br/>
+                </p>
+                <p>
+                    *   Possible solution: Continue to add more training images in dim lighting<br/><br/>
+                </p>
+                <p>
+                    *   Error: Complex or dark backgrounds<br/>
+                </p>
+                <p>
+                    *   Possible solution: Continue to add diversify backgrounds of training images<br/><br/>
+                </p>
+                <p>
+                    *   Error: Products that are set on a surface rather than held<br/>
+                </p>
+                <p>
+                    *   Possible solution: Diversify training data to include products that are not being held<br/>
+                </p>
+                <h4 class="subTitle">Access problems</h4>
+                <p>
+                    Despite our efforts to include diversity in each of our data sets, we acknowledge that imbalances still exist due to the fact that we had more access to certain types of data. Adding the data needed to effectively address these issues is outside the scope of this project. Our datasets are based on the products we owned or had immediate access to, and the backgrounds and lighting present in our surroundings. As a result, classes vary in the amount and type of data diversity.<br/><br/>
+                    <u>Spray Bottle:</u><br/>
+                    +   Most color/shape diversity<br/>
+                    -   Least lighting/background diversity<br/><br/>
+
+                    <u>Sponge:</u><br/>
+                    +   Most lighting/background diversity<br/>
+                    -   Least color/shape diversity<br/><br/>
+
+                    <u>Dish soap:</u><br/>
+                    +   Most balanced diversity<br/>
+                    -   Least amount of data<br/>
+                </p>
+                <p>
+                    In tests, dish soap was misidentified more frequently than spray bottles and sponges, underscoring the importance of Buolamwini's call for balanced training data.
+                </p>
                 <!--This is to have an image with a blurb next to it describing the image-->
                 <div class="line">
                     <div class="imageInRow">
@@ -80,6 +115,17 @@
                         </div>
                     </div>
                 </div>
+
+                <h4 class="subTitle">Skin tone problems</h4>
+                <p>
+                    One additional error we faced in an early version of our model was repeated assertions that images of ourselves were, in fact, spray bottles - an entertaining but nonetheless significant problem. We addressed this by adding group member selfies to the “none of the above” class. While this reduced the error in our tests, our team (and therefore, selfie training data) consists of lighter-skinned individuals. Buolamwini’s work suggests that the misidentification error may persist for darker-skinned individuals. In addition, since our training images feature us holding cleaning products, darker-skinned individuals may encounter reduced accuracy when holding cleaning products. While outside the scope of this project, this could be addressed by soliciting data from a wider range of skin tones. 
+                </p>
+
+                <h4 class="subTitle">Cultural & locational diversity problems</h4>
+                <p>
+                    Buolamwini's work also led us to consider cultural and location-based differences in cleaning products. As UW-Madison students, we primarily have access to supplies sold in local stores. While many of these supplies are produced by name brands sold across the US, products can differ widely by country due to differing regulations and markets. For example, while cleaning products sold in Brazil follow similar international regulations as Europe and the United States, they have more lax research study requirements for new products, less guidance for applicants, and reduced bureaucracy (Silva, et al.). This contributes to differing product availability. Additionally, cleaning methods and preferences vary by culture - for example, Americans prefer chemical cleaning aids, while almost half of Japanese people do not use chemicals (Kaercher). Our US-centric training data suggests that our current model will have higher accuracy for US-based users. A potential future direction for this project is to solicit training data from individuals in other countries, specifically on products that are representative of local cleaning markets and preferences.
+                </p>
+                <img src="img/country_side_by_side.png" alt="2 images comparing the usage rates of different types of cleaners by people in the USA and Japan">
             </div>
                     
             <div class="section">
@@ -109,6 +155,8 @@
                 <br/><p>Everyone Likes It Clean - An International Cleaning Survey, www.kaercher.com/us/inside-karcher/newsroom/kaercher-stories/international-study-everyone-likes-it-clean.html. Accessed 14 Apr. 2026.</p>
                 <br/><p>Silva, Elaine & Moura, Italo & Moita Neto, Jose. (2023). CLEANING PRODUCTS REGULATION IN THREE WORLD MARKETS: THE BRAZILIAN CASE EFFECTIVENESS. Veredas do Direito Direito Ambiental e Desenvolvimento Sustentável. 10.18623/rvd.v20.2543-ing.</p>
                 <br/><p>“What Is the Digital Divide? Meaning, Causes & Impact.” iSchool, 2 Apr. 2026, ischool.syracuse.edu/what-is-the-digital-divide/.</p>
+                <br/><p>Buolamwini Image Source: https://www.linkedin.com/pulse/7-highlights-from-unmasking-ai-ay%C5%9Feg%C3%BCl-g%C3%BCzel-flzte</p>
+                <br/><p>USA vs Japan Graphic: https://www.kaercher.com/us/inside-karcher/newsroom/kaercher-stories/international-study-everyone-likes-it-clean.html</p>
             </div>
             
             <h3><a href="#" class="button">Back to Top of Page ↑</a></h3>

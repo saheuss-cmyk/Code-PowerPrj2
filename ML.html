@@ -27,20 +27,29 @@
             <h3><a href="#tryit" class="button">Click Here to Try Out The Model!</a></h3>
             <!--each "section" is surrounded by a border for visuals-->
             <div class="section">
-                <h1 id="overview" class="statementTitle">Overview</h1>
+                <h1 id="reflection" class="statementTitle">Reflection & Future Directions</h1>
                 <p>
-                    Our model is designed to identify live images of kitchen cleaning supplies. We focused less on capturing a wide variety of kitchen supplies and more on ensuring that each of our classifications was trained on diverse and inclusive data. We chose three unique yet variable classifications: dish soap, spray bottle, and sponge.<br/>
+                    When we began development, we knew we wanted to model with diversity in mind, but struggled with connecting cleaning products to intersectionality. Throughout our data collection and analysis, we began to realize the extent to which even cleaning products are influenced by culture, access, and location – all of which can affect which products are available, individual cleaning preferences, and even access to high-quality video feeds. While Buolamwini’s work initially led us to strive for diversity in terms of product color and background, the project ultimately opened our eyes to how even seemingly insignificant design choices can exert significant influence on AI model performance and encoded power.
                 </p>
+                <h3 class="subTitle">Narrowing the Digital Divide</h3>
                 <p>
-                    In order to limit potential training bias, we followed guidelines laid out by AI activist Joy Buolamwini. This led us to train our model on a variety of dish soaps, sponges, and spray bottles in different colors, shapes, lighting conditions, and background colors. We acknowledge that our model may still be less accurate for users of differing localities or cultures, as we were limited to training on objects that were easily accessible to UW-Madison students.<br/>
+                    The current version of our model exhibited a moderate level of accuracy in our tests. However, it continues to display some flickering between correct and incorrect identifications. Our tests showed that this behavior is significantly worse when using low-quality video feeds, such as computer webcams, and when there is minimal color contrast between an object and the background. Since certain users, such as those who are low-income or in rural areas, may not have access to high-quality cameras due to the digital divide (Syracuse), this is a significant concern in terms of ensuring equity in our model. Future development would include diversifying datasets to represent a wider variety of camera qualities.
                 </p>
+                <h3 class="subTitle">Balancing Dataset</h3>
                 <p>    
-                    Our model performed well in tests, correctly identifying a variety of dish soaps, spray bottles, and sponges. Diversifying our training data significantly improved initial problems with identification accuracy. Regardless, the model continues to display some “flickering” between correct and incorrect identifications, and performs best when using solid-color, high-contrast backgrounds paired with a high-quality video feed. Future directions include adding more training data with lower quality images and low-contrast backgrounds, more data for our “none of the above” classification, and soliciting cross-cultural images of cleaning supplies to reduce bias.
+                    We also note that out of our three categories (dish soap, sponge, and spray bottle), dish soap performs the worst in terms of accuracy. In line with Buolamwini's work, this can likely be attributed to the fact that dish soap has the smallest data set (around 300 images, as opposed to around 500 for both sponge and spray bottle). A priority for future development would be to diversify this set with at least one additional product color or shape.
                 </p>
-                <img src="img/classification_side_by_side.png" alt="3 side by side images of dish soap, a sponge, and a spray bottle">
+                <h3 class="subTitle">User Testing</h3>
+                <p>    
+                    Finally, we acknowledge that our tests, in and of themselves, were limited by the objects that we had access to. We primarily tested our model on the very same objects that it was trained on (for example, a yellow and green sponge, and a blue spray bottle). Since we made significant efforts to diversify training data within our limitations, it is our hope that our model will still perform with a moderate level of accuracy for products on which it was not tested. User feedback will guide the addition of any future training data.
+                </p>
+                <h3 class="subTitle">Cultural Diversity</h3>
+                <p>    
+                    As previously noted, our model also largely excludes products that are not easily accessible in the Madison, Wisconsin area. A future direction, while outside the scope of this project, could be to solicit data from individuals in other countries, as well as those who culturally use different styles of cleaning products. This would significantly improve cross-cultural inclusivity and minimize data bias.
+                </p>
             </div>
 
-            <!-- allows for users to switch over to the statement page-->
+            <!--Allows for user to switch over to the statement page-->
             <h3><a href="./statement.html" class="button">Learn More →</a></h3><br/>
 
             <h1 id="video" class="statementTitle">Video Demo</h1>     
@@ -76,7 +85,7 @@
 
         <!--This is the side nav bar to help navigate through the different sections on this page-->
         <div class="sidebar">
-            <a href="#overview">Overview</a>
+            <a href="#reflection">Reflection</a>
             <a href="#video">Video Demo</a>
             <a id="emphasis" href="#tryit">Try It Yourself</a> <!--I used id because this has higher precedence than a class' CSS-->
             <a href="#training">Training Data</a>
